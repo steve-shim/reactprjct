@@ -5,18 +5,16 @@ import "./index.css";
 const Greeting = () => {
   return (
     <div>
-      <h1>hello world!!</h1>
+      <Person />
+      <Message />
     </div>
   );
 };
 
-// const Greeting = () => {
-//   return React.createElement(
-//     "div",
-//     {},
-//     React.createElement("h1", {}, "hello world")
-//   );
-// };
+const Person = () => <h2>John doe</h2>;
+const Message = () => {
+  return <p>this is my message</p>;
+};
 
 ReactDOM.render(<Greeting />, document.getElementById("root"));
 
