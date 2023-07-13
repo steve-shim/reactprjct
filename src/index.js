@@ -1,22 +1,39 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import "./index.css";
 
-const Greeting = () => {
+const BookList = () => {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 };
 
-const Person = () => <h2>John doe</h2>;
-const Message = () => {
-  return <p>this is my message</p>;
-};
+const Book = () => (
+  <article className="book">
+    <Image></Image>
+    <Title />
+    <Author />
+  </article>
+);
 
-ReactDOM.render(<Greeting />, document.getElementById("root"));
+const Image = () => (
+  <img src="https://image.yes24.com/goods/74602725/L" alt="" />
+);
+
+const Title = () => <h1>메타인지의 힘</h1>;
+const Author = () => (
+  <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+    Amelia Hepworth
+  </h4>
+);
+
+ReactDOM.render(<BookList />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
