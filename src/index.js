@@ -3,8 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 const Greeting = () => {
-  return React.createElement("h1", {}, "hello world!");
+  return <h1>hello world!!</h1>;
 };
+
+// const Greeting = () => {
+//   return React.createElement("h1", {}, "hello world!");
+// };
 
 ReactDOM.render(<Greeting />, document.getElementById("root"));
 
