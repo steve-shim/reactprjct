@@ -3,28 +3,43 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 
-const title = "메타인지의 힘";
-const author = "Amelia Hepworth";
-const img = "https://image.yes24.com/goods/74602725/L";
+const firstBook = {
+  img: "https://image.yes24.com/goods/74602725/L",
+  title: "메타인지의 힘",
+  author: "Amelia Hepworth",
+};
+
+const secondBook = {
+  img: "https://image.yes24.com/goods/119812251/XL",
+  title: "울게되는 한국사",
+  author: "김재원",
+};
 
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book job="developer" />
-      <Book title="ramdom title" number={22} />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 };
 
-const Book = (props) => {
-  console.log("props", props);
+const Book = ({ img, title, author }) => {
+  // setting props directly
+  //const { img, title, author } = props; // using deconstruction
   return (
     <article className="book">
-      <img src={img} alt="" />
+      <img src={img} width={250} height={250} alt="" />
       <h1>{title}</h1>
-      <h4>{author.toUpperCase()}</h4>
-      <p>{props.job}</p>
-      <p>{props.title}</p>
+      <h4>{author}</h4>
     </article>
   );
 };
