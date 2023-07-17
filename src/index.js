@@ -22,7 +22,12 @@ const BookList = () => {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      />
+      >
+        <p>
+          lorem20 lorem20 lorem20 lorem20 lorem20 lorem20 lorem20 lorem20
+          lorem20 lorem20 lorem20 lorem20 lorem20 lorem20
+        </p>
+      </Book>
       <Book
         img={secondBook.img}
         title={secondBook.title}
@@ -32,7 +37,7 @@ const BookList = () => {
   );
 };
 
-const Book = ({ img, title, author }) => {
+const Book = ({ img, title, author, children }) => {
   // setting props directly
   //const { img, title, author } = props; // using deconstruction
   return (
@@ -40,6 +45,7 @@ const Book = ({ img, title, author }) => {
       <img src={img} width={250} height={250} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      {children}
     </article>
   );
 };
