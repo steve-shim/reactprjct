@@ -3,36 +3,37 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 
-const firstBook = {
-  img: "https://image.yes24.com/goods/74602725/L",
-  title: "메타인지의 힘",
-  author: "Amelia Hepworth",
-};
+const books = [
+  {
+    img: "https://image.yes24.com/goods/74602725/L",
+    title: "메타인지의 힘",
+    author: "Amelia Hepworth",
+  },
+  {
+    img: "https://image.yes24.com/goods/119812251/XL",
+    title: "울게되는 한국사",
+    author: "김재원",
+  },
+];
 
-const secondBook = {
-  img: "https://image.yes24.com/goods/119812251/XL",
-  title: "울게되는 한국사",
-  author: "김재원",
-};
+// 객체를 map을 활용하여 렌더링하는 방법
+// const names = ["john", "peter", "susan"];
+// const newNames = names.map((name) => {
+//   return <h1>{name}</h1>;
+// });
 
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book
-        img={firstBook.img}
-        title={firstBook.title}
-        author={firstBook.author}
-      >
-        <p>
-          lorem20 lorem20 lorem20 lorem20 lorem20 lorem20 lorem20 lorem20
-          lorem20 lorem20 lorem20 lorem20 lorem20 lorem20
-        </p>
-      </Book>
-      <Book
-        img={secondBook.img}
-        title={secondBook.title}
-        author={secondBook.author}
-      />
+      {books.map((book) => {
+        const { img, title, author } = book;
+        return (
+          <div>
+            <h3>{title}</h3>
+            <h6>{author}</h6>
+          </div>
+        );
+      })}
     </section>
   );
 };
