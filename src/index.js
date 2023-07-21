@@ -38,12 +38,28 @@ const BookList = () => {
 const Book = (props) => {
   // setting props directly
   const { img, title, author, children } = props; // using deconstruction
+
+  const clickHandler = (e) => {
+    console.log("e.target", e.target);
+    console.log("e.target.value", e.target.value);
+    alert("hello world!");
+  };
+  const complexExample = (author) => {
+    console.log(author);
+  };
+
   return (
     <article className="book">
       <img src={img} width={250} height={250} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
       {children}
+      <button type="button" value={100} onClick={clickHandler}>
+        reference example
+      </button>
+      <button type="button" onClick={() => complexExample(author)}>
+        reference example
+      </button>
     </article>
   );
 };
