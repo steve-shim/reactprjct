@@ -49,7 +49,12 @@ const Book = (props) => {
   };
 
   return (
-    <article className="book">
+    <article
+      className="book"
+      onMouseOver={() => {
+        console.log(`제목은 ${title}`);
+      }}
+    >
       <img src={img} width={250} height={250} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
