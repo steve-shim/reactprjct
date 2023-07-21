@@ -29,7 +29,7 @@ const BookList = () => {
     <section className="booklist">
       {books.map((book) => {
         //const { img, title, author } = book;
-        return <Book key={book.id} book={book}></Book>;
+        return <Book key={book.id} {...book}></Book>;
       })}
     </section>
   );
@@ -37,7 +37,7 @@ const BookList = () => {
 
 const Book = (props) => {
   // setting props directly
-  const { img, title, author, children } = props.book; // using deconstruction
+  const { img, title, author, children } = props; // using deconstruction
   return (
     <article className="book">
       <img src={img} width={250} height={250} alt="" />
